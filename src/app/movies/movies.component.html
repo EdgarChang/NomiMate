@@ -1,0 +1,29 @@
+<div class="center">
+    <h2 class="center">Search Movie</h2>
+    <input [(ngModel)]="searchTitle" placeholder="Search movie title..."/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <button type="submit"(click)="clearMovies();this.getMovies(this.searchTitle)"><i class="fa fa-search"></i></button>  
+</div>
+
+<h2 *ngIf="movies.length>0">Results</h2>
+<ul class="movies">
+  <li *ngFor="let movie of movies" >
+    <span class="badge">Year: {{movie.year}}</span> {{movie.title}}
+    <button *ngIf="nominated(movie)" class="clear" (click)="nominate(movie)" disabled>Nominate⭐</button>
+    <button *ngIf="!nominated(movie)" class="clear" (click)="nominate(movie)">Nominate⭐</button>
+  </li>
+</ul>
+
+<h2 *ngIf="nominatedMovies.length>0">My Nominations</h2>
+<div>
+    <ul class="movies">
+      <li *ngFor="let movie of nominatedMovies">
+        <span class="badge" style="background-color: #c43256;">Year: {{movie.year}}</span> {{movie.title}}
+        <button (click)="remove(movie)">Remove😪</button>
+      </li>
+    </ul>
+
+    <button *ngIf="nominatedMovies.length==5" (click)="sendMail()" style="font-size: large;">
+        Mail your nomination🚀
+    </button>  
+</div>
