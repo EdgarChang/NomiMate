@@ -1,5 +1,11 @@
 # NomiMate
 
+This is a webpage developed for the coding challenge of the Shopify Front-End Developer Internship Summer 2021 application.
+
+This webpage allows user to search for movie with its title and nominate up to 5 movies for an upcoming award.
+
+Once the user has nominated 5 movies, they can mail it with the "Mail your nomination🚀" button.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
 
 ## Development server
